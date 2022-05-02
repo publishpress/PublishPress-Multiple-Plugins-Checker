@@ -65,6 +65,14 @@ if (! defined('PP_AUTHORS_PRO_LOADED') && ! defined('PP_AUTHORS_LOADED')) {
 Please note that the Pro plugin checks two constants: its own constant, and the one defined in the free plugin. This
 way the Pro won't run if the free is already running as a stand alone plugin.
 
+#### Functions
+
+Before defining functions on the global escope always add it inside a conditional using `function_exists`. If they are defined on a speicifc `includes.php` file for example, you can use only one conditional before including it, instead of adding the conditional to every function.
+
+#### Classes
+
+Before declaring classes, follow the same approach on the previous topic, but using `class_exists`.
+
 ### Adding the admin notices library
 
 This library do not use composer's autoloader because it needs to be loaded before everything else in the plugins. But
@@ -74,8 +82,8 @@ You should always check if the vendor folder is on the expected path before tryi
 If not on the standard folder, make sure to give an option to the use to define a constant that gives the custom path of
 the vendor directory.
 
-*Check the following example on how to include and instantiate the library, just make sure to add this code as the
-first thing that will be executed in your plugin, on the root context, out of any hook.*
+**Check the following example on how to include and instantiate the library, just make sure to add this code as the
+first thing that will be executed in your plugin, on the global escope, out of any hook.**
 
 #### Free Plugin example
 
