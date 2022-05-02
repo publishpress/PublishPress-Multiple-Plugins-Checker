@@ -1,6 +1,6 @@
 {
     "name": "publishpress/publishpress-instance-protection",
-    "type": "library",
+    "type": "wordpress-plugin",
     "license": "GPL-3.0-or-later",
     "description": "Library for protecting WordPress plugins to run twice.",
     "keywords": ["wordpress plugin"],
