@@ -22,6 +22,13 @@ class Config
     public $pluginName;
 
     /**
+     * The plugin folder
+     *
+     * @var [type]
+     */
+    public $pluginFolder = '';
+
+    /**
      * True if the plugin is Pro.
      *
      * @var boolean

@@ -257,7 +257,6 @@ class InstanceChecker
         $pluginName = $this->pluginName;
 
         add_action('admin_notices', function() use ($pluginName) {
-            $pluginsPageLilnk = admin_url('plugins.php');
             ?>
             <div class="notice notice-success is-dismissible">
                 <p><?php echo sprintf(esc_html__('You have activated multiple instances of %s. Please keep only one activated and remove the others.', 'publishpress-intance-protection'), esc_html($pluginName)); ?></p>
@@ -278,7 +277,6 @@ class InstanceChecker
         $freePluginName = $this->freePluginName;
 
         add_action('admin_notices', function() use ($pluginName, $freePluginName) {
-            $pluginsPageLilnk = admin_url('plugins.php');
             ?>
             <div class="notice notice-success is-dismissible">
                 <p><?php echo sprintf(esc_html__('Please deactivate %s when %s is activated.', 'publishpress-intance-protection'), esc_html($freePluginName), esc_html($pluginName)); ?></p>
