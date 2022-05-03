@@ -100,6 +100,7 @@ if (class_exists('PublishPressInstanceProtection\\Config')) {
     $pluginCheckerConfig = new PublishPressInstanceProtection\Config();
     $pluginCheckerConfig->pluginSlug = 'publishpress-authors';
     $pluginCheckerConfig->pluginName = 'PublishPress Authors';
+    $pluginCheckerConfig->pluginFolder = 'publishpress-authors'; // Only required if the folder is different from the slug.
 
     $pluginChecker = new PublishPressInstanceProtection\InstanceChecker($pluginCheckerConfig);
 }
@@ -120,6 +121,7 @@ if (class_exists('PublishPressInstanceProtection\\Config')) {
     $pluginCheckerConfig = new PublishPressInstanceProtection\Config();
     $pluginCheckerConfig->pluginSlug = 'publishpress-authors-pro';
     $pluginCheckerConfig->pluginName = 'PublishPress Authors Pro';
+    $pluginCheckerConfig->pluginFolder = 'publishpress-authors-pro'; // Only required if the folder is different from the slug.
     $pluginCheckerConfig->isProPlugin = true;
     $pluginCheckerConfig->freePluginName = 'PublishPress Authors';
 
