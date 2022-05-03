@@ -13,6 +13,8 @@ class InstanceChecker
 
     private $pluginName;
 
+    private $pluginFolder;
+
     /**
      * @var bool
      */
@@ -32,11 +34,16 @@ class InstanceChecker
     {
         $this->pluginSlug = $config->pluginSlug;
         $this->pluginName = $config->pluginName;
+        $this->pluginFolder = $config->pluginFolder;
         $this->isProPlugin = $config->isProPlugin;
         $this->freePluginName = $config->freePluginName;
 
         if (! $this->isProPlugin) {
             $this->freePluginName = $this->pluginName;
+        }
+
+        if (empty($this->pluginFolder)) {
+            $this->pluginFolder = $this->pluginSlug;
         }
 
         if (
@@ -223,9 +230,9 @@ class InstanceChecker
             return;
         }
 
-        $isStandardPath = $pluginFile === ($this->pluginSlug . '/' . $this->pluginSlug . '.php');
+        $expectedPath = $this->pluginFolder . '/' . $this->pluginSlug . '.php';
 
-        if (! $isStandardPath) {
+        if ($pluginFile !== $expectedPath) {
             ?>
             <tr class="ppa-plugin-warning">
                 <td colspan="4" class="colspanchange">
@@ -235,7 +242,7 @@ class InstanceChecker
                             <?php echo sprintf(
                                esc_html__('This plugin is not installed in the standard folder. The current path is %s but it is expected to be %s.', 'publishpress-intance-protection'),
                                 '<code>' . esc_html($pluginFile) . '</code>',
-                                '<code>' . esc_html($this->pluginSlug . '/' . $this->pluginSlug . '.php') . '</code>'
+                                '<code>' . esc_html($expectedPath) . '</code>'
                             );
                             ?>
                         </p>
