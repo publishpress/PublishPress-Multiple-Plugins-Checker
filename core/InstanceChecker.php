@@ -240,7 +240,7 @@ class InstanceChecker
                         <p>
                             <span class="dashicons dashicons-warning"></span>
                             <?php echo sprintf(
-                               esc_html__('This plugin is not installed in the standard folder. The current path is %s but it is expected to be %s.', 'publishpress-intance-protection'),
+                               esc_html__('This plugin is not installed in the standard folder. The current path is %1$s but it is expected to be %2$s.', 'publishpress-intance-protection'),
                                 '<code>' . esc_html($pluginFile) . '</code>',
                                 '<code>' . esc_html($expectedPath) . '</code>'
                             );
@@ -286,7 +286,7 @@ class InstanceChecker
         add_action('admin_notices', function() use ($pluginName, $freePluginName) {
             ?>
             <div class="notice notice-success is-dismissible">
-                <p><?php echo sprintf(esc_html__('Please deactivate %s when %s is activated.', 'publishpress-intance-protection'), esc_html($freePluginName), esc_html($pluginName)); ?></p>
+                <p><?php echo sprintf(esc_html__('Please deactivate %1$s when %2$s is activated.', 'publishpress-intance-protection'), esc_html($freePluginName), esc_html($pluginName)); ?></p>
             </div>
             <?php
         });
