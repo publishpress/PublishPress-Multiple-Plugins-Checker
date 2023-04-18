@@ -57,7 +57,7 @@ class InstanceChecker
 
     public function getVersion()
     {
-        return '1.0.3';
+        return '2.0.0';
     }
 
     public function init()
