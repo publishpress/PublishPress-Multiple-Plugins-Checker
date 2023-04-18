@@ -7,7 +7,7 @@ This is a library for protecting WordPress plugins to run twice instances at the
 This library should be added as a composer requirement running the command:
 
 ```shell
-composer require publishpress/publishpress-instance-protection
+composer require publishpress/instance-protection
 ```
 
 ## How to use it
@@ -74,7 +74,7 @@ first thing that will be executed in your plugin, on the global escope, out of a
 
 ```php
 <?php
-$includeFilebRelativePath = '/publishpress/publishpress-instance-protection/include.php';
+$includeFilebRelativePath = '/publishpress/instance-protection/include.php';
 if (file_exists(__DIR__ . '/vendor' . $includeFilebRelativePath)) {
     require_once __DIR__ . '/vendor' . $includeFilebRelativePath;
 } else if (defined('PP_AUTHORS_VENDOR_PATH') && file_exists(PP_AUTHORS_VENDOR_PATH . $includeFilebRelativePath)) {
@@ -95,7 +95,7 @@ if (class_exists('PublishPressInstanceProtection\\Config')) {
 
 ```php
 <?php
-$includeFilebRelativePath = '/publishpress/publishpress-instance-protection/include.php';
+$includeFilebRelativePath = '/publishpress/instance-protection/include.php';
 if (file_exists(__DIR__ . '/vendor' . $includeFilebRelativePath)) {
     require_once __DIR__ . '/vendor' . $includeFilebRelativePath;
 } else if (defined('PP_AUTHORS_VENDOR_PATH') && file_exists(PP_AUTHORS_VENDOR_PATH . $includeFilebRelativePath)) {
@@ -121,7 +121,7 @@ The only required change is that you need to include two more configurations: `i
 The final code should looks something like:
 
 ```php
-$includeFilebRelativePath = '/publishpress/publishpress-instance-protection/include.php';
+$includeFilebRelativePath = '/publishpress/instance-protection/include.php';
 if (file_exists(__DIR__ . '/vendor' . $includeFilebRelativePath)) {
     require_once __DIR__ . '/vendor' . $includeFilebRelativePath;
 } else if (defined('PP_AUTHORS_VENDOR_PATH') && file_exists(PP_AUTHORS_VENDOR_PATH . $includeFilebRelativePath)) {
